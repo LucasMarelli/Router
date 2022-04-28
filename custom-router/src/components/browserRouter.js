@@ -22,4 +22,5 @@ function BrowserRouter({ children }) {
         </div>
     )
 }
+BrowserRouter.displayName = 'BrowserRouter';//
 export default BrowserRouter
