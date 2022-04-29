@@ -19,7 +19,7 @@ function BrowserRouter({ children }) {
         return React.Children.map(children, (child) => {
             if (child.type.name === "Routes") {
                 return React.cloneElement(child, {
-                    currentPath: currentPath
+                    currentPath: currentPath 
                 });
             } else {
                 return child
