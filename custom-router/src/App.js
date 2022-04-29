@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       <div style={{ background: "red"}}>
       <Link to="/hola">
-        <button>Merca</button>
+        <button>Ok!</button>
       </Link>
       </div>
       <Routes>
