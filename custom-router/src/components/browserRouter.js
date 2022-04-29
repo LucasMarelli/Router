@@ -9,18 +9,26 @@ function BrowserRouter({ children }) {
         document.addEventListener("urlChanged", (e) => {
             e.stopImmediatePropagation();
             setCurrentPath(e.detail.path)
-        });
-
-        React.Children.forEach(children, (element) => {
-            console.log("ASD", element.name)
-        });
+        })
     }, []);
+
+    const renderChildren = () => {
+        return React.Children.map(children, (child) => {
+            if (child.type.name === "Routes") {
+                return React.cloneElement(child, {
+                   currentPath: currentPath 
+                });
+            } else {
+                return child
+            }
+        });
+    }
 
     return (
         <div>
-            {children}
+            {renderChildren()}
         </div>
     )
 }
-BrowserRouter.displayName = 'BrowserRouter';//
+
 export default BrowserRouter
